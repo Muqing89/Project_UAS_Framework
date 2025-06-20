@@ -9,16 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sistem Informasi UKM - Dashboard</title>
+    <title>Sistem Informasi UKM - Kegiatan</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -32,7 +35,7 @@
 
             <!-- Sidebar - Brand -->
             <br>
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardAdminKemahasiswaan">
                 <div class="sidebar-brand-icon">
                     <img src="img/unitomo.png" style="width: 70px; height: auto;" alt="Logo Unitomo">
                 </div>
@@ -45,7 +48,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="dashboard">
+                <a class="nav-link" href="dashboardAdminKemahasiswaan">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -68,8 +71,7 @@
                 <div id="collapseKegiatan" class="collapse" aria-labelledby="headingKegiatan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="inputkegiatan">Tambah Pengajuan <br> Kegiatan</a>
-                        <a class="collapse-item" href="kegiatan">Daftar Pengajuan <br> Kegiatan</a>
+                        <a class="collapse-item" href="verifikasikegiatanAdminKemahasiswaan">Verifikasi Pengajuan <br> Kegiatan</a>
                     </div>
                 </div>
             </li>
@@ -84,8 +86,7 @@
                 <div id="collapseLaporan" class="collapse" aria-labelledby="headingLaporan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="inputlaporan">Tambah Pengajuan <br> Laporan</a>
-                        <a class="collapse-item" href="laporan">Daftar Pengajuan <br> Laporan</a>
+                        <a class="collapse-item" href="verifikasilaporanAdminKemahasiswaan">Verifikasi Pengajuan <br> Laporan</a>
                     </div>
                 </div>
             </li>
@@ -100,8 +101,7 @@
                 <div id="collapseKeuangan" class="collapse" aria-labelledby="headingKeuangan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="tambahpengajuankeuangan">Tambah Pengajuan <br> Keuangan</a>
-                        <a class="collapse-item" href="daftarpengajuankeuangan">Daftar Pengajuan <br> Keuangan</a>
+                        <a class="collapse-item" href="verifikasikeuanganAdminKemahasiswaan">Verifikasi Pengajuan <br> Keuangan</a>
                     </div>
                 </div>
             </li>
@@ -135,15 +135,17 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Cari kegiatan, laporan, atau keuangan..."
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
@@ -303,7 +305,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">User</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin Kemahasiswaan</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -339,99 +341,67 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
+                    <h1 class="h3 mb-2 text-gray-800">Verifikasi Pengajuan Keuangan UKM</h1>
 
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Keuangan Bulan Ini</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp40,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- Tabel Pengajuan Keuangan -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Tabel Verifikasi Keuangan</h6>
                         </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Keungan Total</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Rp215,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Data Sudah Diverivikasi
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">17</div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover text-center align-middle" id="dataTable" width="100%" cellspacing="0">
+                                    <thead class="table-primary" style="background-color: #f5f5f5; font-weight: bold;">
+                                        <tr>
+                                            <th>Jenis UKM</th>
+                                            <th>Tema Kegiatan</th>
+                                            <th>Tanggal</th>
+                                            <th>Jenis Transaksi</th>
+                                            <th>Jumlah Dana</th>
+                                            <th>Keterangan</th>
+                                            <th>Aksi</th>
+                                            <th>Status Admin</th>
+                                            <th>Status WR II</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Data Dummy 1 -->
+                                        <tr>
+                                            <td>Kewirausahaan</td>
+                                            <td>Seminar UMKM</td>
+                                            <td>2025-06-15</td>
+                                            <td>Pemasukan</td>
+                                            <td>Rp 2.000.000</td>
+                                            <td>Biaya pendaftaran peserta</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-success btn-sm" onclick="return confirm('Verifikasi pengajuan ini?')">Verifikasi</button>
+                                                    <button class="btn btn-danger btn-sm" onclick="return confirm('Tolak pengajuan ini?')">Tolak</button>
                                                 </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 75%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                            </td>
+                                            <td><span class="badge bg-warning text-dark">Belum Diverifikasi</span></td>
+                                            <td><span class="badge bg-secondary text-white">Menunggu Admin</span></td>
+                                        </tr>
 
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Data Belum Diverivikasi</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <!-- Data Dummy 2 -->
+                                        <tr>
+                                            <td>Seni dan Budaya</td>
+                                            <td>Festival Tari</td>
+                                            <td>2025-06-18</td>
+                                            <td>Pengeluaran</td>
+                                            <td>Rp 1.500.000</td>
+                                            <td>Sewa kostum dan dekorasi</td>
+                                            <td>
+                                                <button class="btn btn-secondary btn-sm" disabled>Sudah Diverifikasi</button>
+                                            </td>
+                                            <td><span class="badge bg-success">Terverifikasi</span></td>
+                                            <td><span class="badge bg-success">Terverifikasi</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-
 
                 </div>
                 <!-- /.container-fluid -->
@@ -443,7 +413,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Sistem Informasi UKM - Universitas Dr. Soetomo</span>
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
             </footer>
@@ -491,11 +461,11 @@
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 

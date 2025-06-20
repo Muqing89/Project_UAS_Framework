@@ -35,11 +35,11 @@
 
             <!-- Sidebar - Brand -->
             <br>
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardOrmawa">
                 <div class="sidebar-brand-icon">
                     <img src="img/unitomo.png" style="width: 70px; height: auto;" alt="Logo Unitomo">
                 </div>
-                <div class="sidebar-brand-text mx-3">SISTEM INFORMASI UKM<sup></sup></div>
+                <div class="sidebar-brand-text mx-3">SISTEM INFORMASI UKM UNITOMO<sup></sup></div>
             </a>
             <br>
 
@@ -48,7 +48,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="dashboard">
+                <a class="nav-link" href="dashboardOrmawa">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -71,8 +71,8 @@
                 <div id="collapseKegiatan" class="collapse" aria-labelledby="headingKegiatan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="inputkegiatan">Pengajuan Kegiatan</a>
-                        <a class="collapse-item" href="kegiatan">Daftar Kegiatan</a>
+                        <a class="collapse-item" href="inputkegiatanOrmawa">Tambah Pengajuan <br> Kegiatan</a>
+                        <a class="collapse-item" href="kegiatanOrmawa">Daftar Pengajuan <br> Kegiatan</a>
                     </div>
                 </div>
             </li>
@@ -87,8 +87,8 @@
                 <div id="collapseLaporan" class="collapse" aria-labelledby="headingLaporan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="tambahpengajuanlaporan">Tambah Pengajuan <br> Laporan</a>
-                        <a class="collapse-item" href="daftarpengajuanlaporan">Daftar Pengajuan <br> Laporan</a>
+                        <a class="collapse-item" href="inputlaporanOrmawa">Tambah Pengajuan <br> Laporan</a>
+                        <a class="collapse-item" href="laporanOrmawa">Daftar Pengajuan <br> Laporan</a>
                     </div>
                 </div>
             </li>
@@ -103,11 +103,12 @@
                 <div id="collapseKeuangan" class="collapse" aria-labelledby="headingKeuangan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="tambahpengajuankeuangan">Tambah Pengajuan <br> Keuangan</a>
-                        <a class="collapse-item" href="daftarpengajuankeuangan">Daftar Pengajuan <br> Keuangan</a>
+                        <a class="collapse-item" href="inputkeuanganOrmawa">Tambah Pengajuan <br> Keuangan</a>
+                        <a class="collapse-item" href="keuanganOrmawa">Daftar Pengajuan <br> Keuangan</a>
                     </div>
                 </div>
             </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -352,7 +353,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover text-center align-middle" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered table-hover text-center align-middle" id="dataTable" style="color: #000000;" width="100%" cellspacing="0">
                                     <thead class="table-primary" style="background-color: #f5f5f5; font-weight: bold;">
                                         <tr>
                                             <th>Nama</th>
@@ -360,7 +361,8 @@
                                             <th>Tema</th>
                                             <th>Tempat</th>
                                             <th>Aksi</th>
-                                            <th>Status</th>
+                                            <th>Status Admin</th>
+                                            <th>Status WR II</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -371,18 +373,16 @@
                                             <td>Festival Budaya</td>
                                             <td>Aula Utama</td>
                                             <td>
-                                                <!-- Opsi Pertama -->
                                                 <div class="btn-group">
                                                     <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">Aksi</button>
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item text-danger" href="#">Hapus</a>
+                                                        <a class="dropdown-item text-danger" href="#" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
                                                     </div>
                                                 </div>
-
-
                                             </td>
                                             <td><span class="badge bg-warning text-dark">Belum Diverifikasi</span></td>
+                                            <td><span class="badge bg-secondary text-white">Menunggu Admin</span></td>
                                         </tr>
                                         <tr>
                                             <td>Siti Aisyah</td>
@@ -390,13 +390,12 @@
                                             <td>Turnamen Futsal</td>
                                             <td>GOR Kampus</td>
                                             <td>
-                                                <!-- Opsi Kedua -->
                                                 <a href="#" class="btn btn-sm btn-primary">Edit</a>
                                                 <a href="#" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
                                             </td>
                                             <td><span class="badge bg-success">Terverifikasi</span></td>
+                                            <td><span class="badge bg-success">Terverifikasi</span></td>
                                         </tr>
-                                        <!-- Tambahkan baris data lainnya jika perlu -->
                                     </tbody>
                                 </table>
                             </div>
@@ -405,6 +404,7 @@
 
                 </div>
                 <!-- /.container-fluid -->
+
 
 
             </div>

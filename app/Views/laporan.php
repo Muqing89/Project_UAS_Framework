@@ -35,11 +35,11 @@
 
             <!-- Sidebar - Brand -->
             <br>
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardOrmawa">
                 <div class="sidebar-brand-icon">
                     <img src="img/unitomo.png" style="width: 70px; height: auto;" alt="Logo Unitomo">
                 </div>
-                <div class="sidebar-brand-text mx-3">SISTEM INFORMASI UKM<sup></sup></div>
+                <div class="sidebar-brand-text mx-3">SISTEM INFORMASI UKM UNITOMO<sup></sup></div>
             </a>
             <br>
 
@@ -71,8 +71,8 @@
                 <div id="collapseKegiatan" class="collapse" aria-labelledby="headingKegiatan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="inputkegiatan">Pengajuan Kegiatan</a>
-                        <a class="collapse-item" href="kegiatan">Daftar Kegiatan</a>
+                        <a class="collapse-item" href="inputkegiatanOrmawa">Tambah Pengajuan <br> Kegiatan</a>
+                        <a class="collapse-item" href="kegiatanOrmawa">Daftar Pengajuan <br> Kegiatan</a>
                     </div>
                 </div>
             </li>
@@ -87,8 +87,8 @@
                 <div id="collapseLaporan" class="collapse" aria-labelledby="headingLaporan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="tambahpengajuanlaporan">Tambah Pengajuan <br> Laporan</a>
-                        <a class="collapse-item" href="daftarpengajuanlaporan">Daftar Pengajuan <br> Laporan</a>
+                        <a class="collapse-item" href="inputlaporanOrmawa">Tambah Pengajuan <br> Laporan</a>
+                        <a class="collapse-item" href="laporanOrmawa">Daftar Pengajuan <br> Laporan</a>
                     </div>
                 </div>
             </li>
@@ -103,11 +103,12 @@
                 <div id="collapseKeuangan" class="collapse" aria-labelledby="headingKeuangan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="tambahpengajuankeuangan">Tambah Pengajuan <br> Keuangan</a>
-                        <a class="collapse-item" href="daftarpengajuankeuangan">Daftar Pengajuan <br> Keuangan</a>
+                        <a class="collapse-item" href="inputkeuanganOrmawa">Tambah Pengajuan <br> Keuangan</a>
+                        <a class="collapse-item" href="keuanganOrmawa">Daftar Pengajuan <br> Keuangan</a>
                     </div>
                 </div>
             </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -346,49 +347,53 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Daftar Pengajuan Laporan UKM</h1>
 
-                    <!-- Tabel Laporan -->
+                    <!-- Tabel Pengajuan Laporan -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Tabel Pengajuan Laporan</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover text-center align-middle" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered table-hover text-center align-middle" id="dataTable" style="color: #000000;" width="100%" cellspacing="0">
                                     <thead class="table-primary" style="background-color: #f5f5f5; font-weight: bold;">
                                         <tr>
-                                            <th>Nama Kegiatan</th>
+                                            <th>Jenis UKM</th>
+                                            <th>Tema Kegiatan</th>
                                             <th>Tanggal</th>
                                             <th>Hasil Kegiatan</th>
                                             <th>Dokumen</th>
-                                            <th>Status</th>
                                             <th>Aksi</th>
+                                            <th>Status Admin</th>
+                                            <th>Status WR II</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- Data Dummy 1: Tombol Biasa -->
+                                        <!-- Data Dummy 1 -->
                                         <tr>
+                                            <td>Kepemimpinan</td>
                                             <td>Pelatihan Kepemimpinan</td>
                                             <td>2025-06-10</td>
                                             <td>Berjalan lancar, peserta aktif.</td>
                                             <td>
                                                 <a href="/uploads/laporan/pelatihan_kepemimpinan.pdf" target="_blank" class="btn btn-sm btn-outline-info">Lihat</a>
                                             </td>
-                                            <td><span class="badge bg-warning text-dark">Menunggu Verifikasi</span></td>
                                             <td>
                                                 <a href="#" class="btn btn-sm btn-primary">Edit</a>
                                                 <a href="#" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus laporan ini?')">Hapus</a>
                                             </td>
+                                            <td><span class="badge bg-warning text-dark">Belum Diverifikasi</span></td>
+                                            <td><span class="badge bg-secondary text-white">Menunggu Admin</span></td>
                                         </tr>
 
-                                        <!-- Data Dummy 2: Dropdown Aksi -->
+                                        <!-- Data Dummy 2 -->
                                         <tr>
+                                            <td>Olahraga</td>
                                             <td>Turnamen Futsal</td>
                                             <td>2025-06-14</td>
                                             <td>Juara 1 diraih oleh UKM Olahraga A.</td>
                                             <td>
                                                 <a href="/uploads/laporan/turnamen_futsal.docx" target="_blank" class="btn btn-sm btn-outline-info">Lihat</a>
                                             </td>
-                                            <td><span class="badge bg-success">Terverifikasi</span></td>
                                             <td>
                                                 <div class="btn-group">
                                                     <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">Aksi</button>
@@ -398,16 +403,19 @@
                                                     </div>
                                                 </div>
                                             </td>
+                                            <td><span class="badge bg-success">Terverifikasi</span></td>
+                                            <td><span class="badge bg-success">Terverifikasi</span></td>
                                         </tr>
-                                        <!-- Tambahkan baris lainnya secara dinamis -->
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
 
+
+
                 </div>
-                
+
                 <!-- /.container-fluid -->
 
             </div>

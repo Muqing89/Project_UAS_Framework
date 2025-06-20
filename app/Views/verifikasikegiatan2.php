@@ -35,7 +35,7 @@
 
             <!-- Sidebar - Brand -->
             <br>
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardOrmawa">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardWakilRektorII">
                 <div class="sidebar-brand-icon">
                     <img src="img/unitomo.png" style="width: 70px; height: auto;" alt="Logo Unitomo">
                 </div>
@@ -48,7 +48,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="dashboard">
+                <a class="nav-link" href="dashboardWakilRektorII">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -71,8 +71,7 @@
                 <div id="collapseKegiatan" class="collapse" aria-labelledby="headingKegiatan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="inputkegiatanOrmawa">Tambah Pengajuan <br> Kegiatan</a>
-                        <a class="collapse-item" href="kegiatanOrmawa">Daftar Pengajuan <br> Kegiatan</a>
+                        <a class="collapse-item" href="verifikasikegiatanWakilRektorII">Verifikasi Pengajuan <br> Kegiatan</a>
                     </div>
                 </div>
             </li>
@@ -87,8 +86,7 @@
                 <div id="collapseLaporan" class="collapse" aria-labelledby="headingLaporan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="inputlaporanOrmawa">Tambah Pengajuan <br> Laporan</a>
-                        <a class="collapse-item" href="laporanOrmawa">Daftar Pengajuan <br> Laporan</a>
+                        <a class="collapse-item" href="verifikasilaporanWakilRektorII">Verifikasi Pengajuan <br> Laporan</a>
                     </div>
                 </div>
             </li>
@@ -103,8 +101,7 @@
                 <div id="collapseKeuangan" class="collapse" aria-labelledby="headingKeuangan" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pilihan:</h6>
-                        <a class="collapse-item" href="inputkeuanganOrmawa">Tambah Pengajuan <br> Keuangan</a>
-                        <a class="collapse-item" href="keuanganOrmawa">Daftar Pengajuan <br> Keuangan</a>
+                        <a class="collapse-item" href="verifikasikeuanganWakilRektorII">Verifikasi Pengajuan <br> Keuangan</a>
                     </div>
                 </div>
             </li>
@@ -308,7 +305,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">User</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Wakil Rektor II</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -341,28 +338,25 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Daftar Pengajuan Keuangan UKM</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Verifikasi Kegiatan UKM</h1>
 
-                    <!-- Tabel Pengajuan Keuangan -->
+                    <!-- Data Table -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tabel Pengajuan Keuangan</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Daftar Usulan Kegiatan</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover text-center align-middle" id="dataTable" style="color: #000000;" width="100%" cellspacing="0">
                                     <thead class="table-primary" style="background-color: #f5f5f5; font-weight: bold;">
                                         <tr>
+                                            <th>Nama</th>
                                             <th>Jenis UKM</th>
-                                            <th>Tema Kegiatan</th>
-                                            <th>Tanggal</th>
-                                            <th>Jenis Transaksi</th>
-                                            <th>Jumlah Dana</th>
-                                            <th>Keterangan</th>
+                                            <th>Tema</th>
+                                            <th>Tempat</th>
                                             <th>Aksi</th>
                                             <th>Status Admin</th>
                                             <th>Status WR II</th>
@@ -371,15 +365,15 @@
                                     <tbody>
                                         <!-- Data Dummy 1 -->
                                         <tr>
-                                            <td>Kewirausahaan</td>
-                                            <td>Seminar UMKM</td>
-                                            <td>2025-06-15</td>
-                                            <td>Pemasukan</td>
-                                            <td>Rp 2.000.000</td>
-                                            <td>Biaya pendaftaran peserta</td>
+                                            <td>Ali Rahman</td>
+                                            <td>Seni dan Budaya</td>
+                                            <td>Festival Budaya</td>
+                                            <td>Aula Utama</td>
                                             <td>
-                                                <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                                <a href="#" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-success btn-sm" onclick="return confirm('Verifikasi kegiatan ini?')">Verifikasi</button>
+                                                    <button class="btn btn-danger btn-sm" onclick="return confirm('Tolak kegiatan ini?')">Tolak</button>
+                                                </div>
                                             </td>
                                             <td><span class="badge bg-warning text-dark">Belum Diverifikasi</span></td>
                                             <td><span class="badge bg-secondary text-white">Menunggu Admin</span></td>
@@ -387,35 +381,44 @@
 
                                         <!-- Data Dummy 2 -->
                                         <tr>
-                                            <td>Seni dan Budaya</td>
-                                            <td>Festival Tari</td>
-                                            <td>2025-06-18</td>
-                                            <td>Pengeluaran</td>
-                                            <td>Rp 1.500.000</td>
-                                            <td>Sewa kostum dan dekorasi</td>
+                                            <td>Siti Aisyah</td>
+                                            <td>Olahraga</td>
+                                            <td>Turnamen Futsal</td>
+                                            <td>GOR Kampus</td>
                                             <td>
-                                                <div class="btn-group">
-                                                    <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">Aksi</button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item text-danger" href="#" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
-                                                    </div>
-                                                </div>
+                                                <button class="btn btn-secondary btn-sm" disabled>Sudah Diverifikasi</button>
                                             </td>
                                             <td><span class="badge bg-success">Terverifikasi</span></td>
                                             <td><span class="badge bg-success">Terverifikasi</span></td>
                                         </tr>
+
+                                        <!-- Data Dummy 3 -->
+                                        <tr>
+                                            <td>Budi Santoso</td>
+                                            <td>Kewirausahaan</td>
+                                            <td>Workshop UMKM</td>
+                                            <td>Ruang Serbaguna</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-success btn-sm">Verifikasi</button>
+                                                    <button class="btn btn-danger btn-sm">Tolak</button>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-warning text-dark">Belum Diverifikasi</span></td>
+                                            <td><span class="badge bg-secondary text-white">Menunggu Admin</span></td>
+                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
 
-
                 </div>
-
-
                 <!-- /.container-fluid -->
+
+
+
 
             </div>
             <!-- End of Main Content -->
