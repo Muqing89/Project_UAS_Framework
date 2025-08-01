@@ -1,0 +1,43 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4e73df, #224abe);
+    background: url('../img/Background1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.login-card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.login-card img {
+    width: 80px;
+}
+
+.login-card h1 {
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #224abe;
+    border-color: #224abe;
+}
+
+.btn-primary:hover {
+    background-color: #1c3e9e;
+}
+
+.form-control-user {
+    border-radius: 10rem;
+    padding-left: 1.5rem;
+}
+
+.alert {
+    font-size: 0.9rem;
+}
+
+small {
+    color: #6c757d;
+}

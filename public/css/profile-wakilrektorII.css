@@ -1,0 +1,75 @@
+/* Reset dasar */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #91C8E4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Pembungkus utama */
+.wrapper {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px 20px;
+}
+
+/* Kotak profil */
+.profile-box {
+    background: #FAF7F3;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul utama */
+.title {
+    text-align: center;
+    font-size: 28px;
+    color: #003ae8;
+    margin-bottom: 30px;
+}
+
+/* Bagian tiap section */
+section {
+    margin-bottom: 30px;
+}
+
+section h3 {
+    color: #003ae8;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #003ae8;
+    padding-bottom: 5px;
+}
+
+/* Daftar isi */
+.list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Tombol kembali */
+.btn-kembali {
+    display: inline-block;
+    background-color: #003ae8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-kembali:hover {
+    background-color: #002bb5;
+}

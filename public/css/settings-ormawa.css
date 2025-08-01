@@ -1,0 +1,45 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.btn-primary {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-primary:hover {
+    background-color: #005cbf;
+    border-color: #0056b3;
+}
+
+.alert {
+    margin-bottom: 1rem;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+}
+
+.btn-kembali {
+    display: inline-block;
+    background-color: #003ae8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-kembali:hover {
+    background-color: #002bb5;
+}

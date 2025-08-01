@@ -34,6 +34,12 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+
+        'role' => \App\Filters\Role::class,
+
+        'role:admin'        => \App\Filters\RoleAdmin::class,
+        'role:ormawa'       => \App\Filters\RoleOrmawa::class,
+        'role:wakil_rektor' => \App\Filters\RoleWakilRektor::class,
     ];
 
     /**

@@ -22,7 +22,7 @@ class Login extends BaseController
         $user = $model->where('username', $username)->first();
 
         if ($user) {
-            // Cek password (asumsi menggunakan password hash)
+            // Cek password nya apakah benar atau salah
             if ($password == $user['password']) {
                 // if (password_verify($password, $user['password'])) {
                 $data = [
@@ -35,7 +35,7 @@ class Login extends BaseController
 
                 // Arahkan sesuai role
                 if ($user['role'] == 'admin') {
-                    return redirect()->to('dashboardAdminKemahasiswaan');
+                    return redirect()->to(uri: 'dashboardAdminKemahasiswaan');
                 } elseif ($user['role'] == 'ormawa') {
                     return redirect()->to('dashboardOrmawa');
                 } elseif ($user['role'] == 'wakil_rektor') {
@@ -55,7 +55,7 @@ class Login extends BaseController
 
     public function logout()
     {
-        session()->destroy();
-        return redirect()->to('/');
+        session()->destroy(); // Menghapus semua data sesi pengguna (log out)
+        return redirect()->to('/');  // Arahkan pengguna kembali ke halaman utama atau login
     }
 }

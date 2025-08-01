@@ -1,0 +1,42 @@
+/* ========== CARD PENYESUAIAN ========== */
+.card {
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* Padding antar baris di dashboard */
+.dashboard-section {
+    margin-bottom: 2rem;
+}
+
+/* Headings utama */
+h5.text-primary {
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
+/* Container agar konten tidak menempel */
+.container-fluid {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Pie chart container */
+.chart-pie {
+    min-height: 250px;
+}
+
+/* Footer spacing */
+footer.sticky-footer {
+    padding: 1.5rem 0;
+}
+
+/* Responsif tambahan */
+@media (max-width: 768px) {
+    .chart-pie {
+        min-height: 200px;
+    }
+}
+
+

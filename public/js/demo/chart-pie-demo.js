@@ -1,35 +1,71 @@
-// Set new default font family and font color to mimic Bootstrap's default styling
-Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-Chart.defaults.global.defaultFontColor = '#858796';
+// Donut Chart: Kegiatan
+const ctxKegiatan = document.getElementById("chartKegiatan");
+if (ctxKegiatan) {
+    new Chart(ctxKegiatan, {
+        type: 'doughnut',
+        data: {
+            labels: ["Disetujui", "Ditolak", "Belum Diverifikasi"],
+            datasets: [{
+                data: kegiatanData,
+                backgroundColor: ['#1cc88a', '#e74a3b', '#f6c23e'],
+                hoverBackgroundColor: ['#17a673', '#be2617', '#dda20a'],
+                hoverBorderColor: "rgba(234, 236, 244, 1)",
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: true, position: 'bottom' },
+            },
+            cutout: '70%',
+        },
+    });
+}
 
-// Pie Chart Example
-var ctx = document.getElementById("myPieChart");
-var myPieChart = new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: ["Direct", "Referral", "Social"],
-    datasets: [{
-      data: [55, 30, 15],
-      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
-      hoverBorderColor: "rgba(234, 236, 244, 1)",
-    }],
-  },
-  options: {
-    maintainAspectRatio: false,
-    tooltips: {
-      backgroundColor: "rgb(255,255,255)",
-      bodyFontColor: "#858796",
-      borderColor: '#dddfeb',
-      borderWidth: 1,
-      xPadding: 15,
-      yPadding: 15,
-      displayColors: false,
-      caretPadding: 10,
-    },
-    legend: {
-      display: false
-    },
-    cutoutPercentage: 80,
-  },
-});
+// Donut Chart: Laporan
+const ctxLaporan = document.getElementById("chartLaporan");
+if (ctxLaporan) {
+    new Chart(ctxLaporan, {
+        type: 'doughnut',
+        data: {
+            labels: ["Terverifikasi", "Ditolak", "Menunggu"],
+            datasets: [{
+                data: laporanData,
+                backgroundColor: ['#4e73df', '#e74a3b', '#f6c23e'],
+                hoverBackgroundColor: ['#2e59d9', '#be2617', '#dda20a'],
+                hoverBorderColor: "rgba(234, 236, 244, 1)",
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: true, position: 'bottom' },
+            },
+            cutout: '70%',
+        },
+    });
+}
+
+// Donut Chart: Keuangan
+const ctxKeuangan = document.getElementById("chartKeuangan");
+if (ctxKeuangan) {
+    new Chart(ctxKeuangan, {
+        type: 'doughnut',
+        data: {
+            labels: ["Disetujui", "Ditolak", "Belum Diverifikasi"],
+            datasets: [{
+                data: keuanganData,
+                backgroundColor: ['#36b9cc', '#e74a3b', '#f6c23e'],
+                hoverBackgroundColor: ['#2c9faf', '#be2617', '#dda20a'],
+                hoverBorderColor: "rgba(234, 236, 244, 1)",
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: true, position: 'bottom' },
+            },
+            cutout: '70%',
+        },
+    });
+}
