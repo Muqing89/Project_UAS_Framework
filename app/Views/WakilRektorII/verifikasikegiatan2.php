@@ -154,17 +154,13 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="profileWakilRektorII">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="settingsWakilRektor">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -205,43 +201,43 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                            <?php foreach ($kegiatan as $row): ?>
-                                                <tr>
-                                                    <td><?= esc($row['nama_ukm']) ?></td>
-                                                    <td><?= esc($row['ketua_pelaksana']) ?></td>
-                                                    <td><?= esc($row['tanggal_kegiatan']) ?></td>
-                                                    <td><?= esc($row['tempat_kegiatan']) ?></td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalWRDetail<?= $row['id'] ?>">
-                                                            Lihat Detail
-                                                        </button>
-                                                    </td>
-                                                    <td>
-                                                        <?php if ($row['status_admin'] === 'Terverifikasi'): ?>
-                                                            <span class="badge bg-success">Terverifikasi</span>
-                                                        <?php elseif ($row['status_admin'] === 'Ditolak'): ?>
-                                                            <span class="badge bg-danger">Ditolak</span>
-                                                        <?php elseif ($row['status_admin'] === 'Belum Diverifikasi'): ?>
-                                                            <span class="badge bg-warning text-dark">Belum Diverifikasi</span>
-                                                        <?php else: ?>
-                                                            <span class="badge bg-warning text-dark">Status Tidak Diketahui</span>
-                                                        <?php endif; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php if ($row['status_wr'] === 'Disetujui WR II'): ?>
-                                                            <span class="badge bg-success">Disetujui WR II</span>
-                                                        <?php elseif ($row['status_wr'] === 'Ditolak'): ?>
-                                                            <span class="badge bg-danger">Ditolak</span>
-                                                        <?php elseif ($row['status_wr'] === 'Belum Diverifikasi'): ?>
-                                                            <span class="badge bg-secondary text-white">Menunggu Proses WR II</span>
-                                                        <?php elseif ($row['status_wr'] === 'Menunggu Admin' || empty($row['status_wr'])): ?>
-                                                            <span class="badge bg-light text-dark">Menunggu Verifikasi WR II</span>
-                                                        <?php else: ?>
-                                                            <span class="badge bg-light text-dark">Status Tidak Diketahui</span>
-                                                        <?php endif; ?>
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach; ?>
+                                        <?php foreach ($kegiatan as $row): ?>
+                                            <tr>
+                                                <td><?= esc($row['nama_ukm']) ?></td>
+                                                <td><?= esc($row['ketua_pelaksana']) ?></td>
+                                                <td><?= esc($row['tanggal_kegiatan']) ?></td>
+                                                <td><?= esc($row['tempat_kegiatan']) ?></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalWRDetail<?= $row['id'] ?>">
+                                                        Lihat Detail
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <?php if ($row['status_admin'] === 'Terverifikasi'): ?>
+                                                        <span class="badge bg-success">Terverifikasi</span>
+                                                    <?php elseif ($row['status_admin'] === 'Ditolak'): ?>
+                                                        <span class="badge bg-danger">Ditolak</span>
+                                                    <?php elseif ($row['status_admin'] === 'Belum Diverifikasi'): ?>
+                                                        <span class="badge bg-warning text-dark">Belum Diverifikasi</span>
+                                                    <?php else: ?>
+                                                        <span class="badge bg-warning text-dark">Status Tidak Diketahui</span>
+                                                    <?php endif; ?>
+                                                </td>
+                                                <td>
+                                                    <?php if ($row['status_wr'] === 'Disetujui WR II'): ?>
+                                                        <span class="badge bg-success">Disetujui WR II</span>
+                                                    <?php elseif ($row['status_wr'] === 'Ditolak'): ?>
+                                                        <span class="badge bg-danger">Ditolak</span>
+                                                    <?php elseif ($row['status_wr'] === 'Belum Diverifikasi'): ?>
+                                                        <span class="badge bg-secondary text-white">Menunggu Proses WR II</span>
+                                                    <?php elseif ($row['status_wr'] === 'Menunggu Admin' || empty($row['status_wr'])): ?>
+                                                        <span class="badge bg-light text-dark">Menunggu Verifikasi WR II</span>
+                                                    <?php else: ?>
+                                                        <span class="badge bg-light text-dark">Status Tidak Diketahui</span>
+                                                    <?php endif; ?>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
